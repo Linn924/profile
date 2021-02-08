@@ -76,7 +76,6 @@ export default {
             height: 250px;
             margin: 0 15px 30px;
             background: white;
-            box-shadow: rgb(0 0 0 / 3%) 0px 5px 10px;
             cursor: pointer;
             transition: all .25s;
             &:hover{box-shadow: 2px 4px 2px 1px rgba(0,0,0,.12);}
