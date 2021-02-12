@@ -7,32 +7,28 @@
                 <img src="../assets/image/home.jpg" alt="">
                 <div class="introduce">
                     <p>简约首页</p>
-                    <p>简单美观的浏览器起始页</p>
-                    <p>全平台 线上应用</p>
+                    <p>简单美观的浏览器起始页，搭配简约导航，使用起来效果更佳哦！</p>
                 </div>
             </a>
             <a href="http://nav.linncode.cn" target="_blank">
-                <img src="../assets/image/work.jpg" alt="">
+                <img src="../assets/image/nav.jpg" alt="">
                 <div class="introduce">
                     <p>简约导航</p>
-                    <p>简单美观的导航页</p>
-                    <p>全平台 线上应用</p>
+                    <p>方便实用的导航站点，搭配简约首页，使用起来效果更佳哦！</p>
                 </div>
             </a>
             <a href="http://blog.linncode.cn" target="_blank">
                 <img src="../assets/image/blog.jpg" alt="">
                 <div class="introduce">
                     <p>简约博客</p>
-                    <p>简单美观的个人博客</p>
-                    <p>全平台 线上应用</p>
+                    <p>输出博客文章的站点。例如：搜索框毛玻璃效果等。</p>
                 </div>
             </a>
             <a href="http://blogManage.linncode.cn" target="_blank">
                 <img src="../assets/image/manage.jpg" alt="">
                 <div class="introduce">
                     <p>简约博客后台管理</p>
-                    <p>博客管理系统</p>
-                    <p>全平台 线上应用</p>
+                    <p>对简约博客文章、分类、标签、评论等功能的管理。</p>
                 </div>
             </a>
         </nav>
@@ -73,7 +69,7 @@ export default {
         a{
             display: inline-block;
             width: 300px;
-            height: 250px;
+            height: 260px;
             margin: 0 15px 30px;
             background: white;
             cursor: pointer;
@@ -88,7 +84,7 @@ export default {
 }
 .introduce{
     width: 100%;
-    height: 90px;
+    height: 100px;
     box-sizing: border-box;
     padding: 15px 20px;
     p:first-child{
@@ -99,14 +95,8 @@ export default {
     p:nth-child(2){
         color: #888;
         font-size: small;
-        line-height: 10px;
-        white-space: nowrap;
+        line-height: 1.5;
         margin: 5px 0 10px 0;
-    }
-    p:last-child{
-        font-size: 11px;
-        line-height: 15px;
-        color: rgba(0,0,0,0.5);
     }
 }
 @media screen and(max-width:1200px){

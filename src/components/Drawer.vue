@@ -1,5 +1,8 @@
 <template>
     <div id="drawer" :class="{opened:isOpened,folded:isFolded}">
+        <div class="icon">
+            <i class="fa fa-bars" @click="close"></i>
+        </div>
         <nav>
             <span 
                 v-for="(item,index) in navList" 
@@ -14,7 +17,12 @@
 <script>
 export default {
     name:'Drawer',
-    props:['drawer','move'],
+    props:{
+        move:{
+            type:Function,
+            required:true
+        }
+    },
     data(){
         return {
             isOpened:false,
@@ -23,18 +31,17 @@ export default {
                 {href:'top',title:'首页'},
                 {href:'about',title:'关于'},
                 {href:'work',title:'作品'}
-            ],
+            ]
         }
     },
-    watch:{
-        'drawer'(val){
-            if(val){
-                this.isOpened = true
-                this.isFolded = false
-            }else{
-                this.isOpened = false
-                this.isFolded = true
-            }
+    methods:{
+        open(){
+            this.isOpened = true
+            this.isFolded = false
+        },
+        close(){
+            this.isOpened = false
+            this.isFolded = true
         }
     }
 }
@@ -49,10 +56,24 @@ export default {
     width: 200px;
     box-sizing: border-box;
     background-color: #fff;
+    z-index: 999;
+    .icon{
+        width: inherit;
+        box-sizing: border-box;
+        padding-right: 20px;
+        height: 80px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        i{
+            font-size: 24px;
+            color: #2468F2;
+            cursor: pointer;
+        }
+    }
     nav{
         display: flex;
         flex-direction: column;
-        margin-top: 80px;
         span{
             width: 100%;
             box-sizing: border-box;

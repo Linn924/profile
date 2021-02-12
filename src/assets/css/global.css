@@ -6,7 +6,7 @@ html,
 body,
 #app{
     min-width: 375px;
-    background: url('../image/Childhood.jpg') no-repeat center center;
+    background: url('../image/home.jpg') no-repeat center center;
     background-attachment: fixed;
 }
 

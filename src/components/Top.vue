@@ -14,7 +14,7 @@
                     {{item.title}}
                 </a>
             </nav>
-            <i class="fa fa-bars" @click="drawer = !drawer"></i>
+            <i class="fa fa-bars" @click="open"></i>
         </header>
         <main>
             <div class="introduce">
@@ -30,7 +30,7 @@
         <footer>
             <div class="triangle" @click="move('about')"></div>
         </footer>
-        <Drawer :drawer="drawer" :move="move"></Drawer>
+        <Drawer ref="drawer" :move="move"></Drawer>
     </div>
 </template>
 <script>
@@ -56,8 +56,7 @@ export default {
                 {href:'top',title:'首页',extended:false,shorten:false},
                 {href:'about',title:'关于',extended:false,shorten:false},
                 {href:'work',title:'作品',extended:false,shorten:false}
-            ],
-            drawer:false
+            ]
         }
     },
     methods:{
@@ -68,6 +67,9 @@ export default {
         leave(data){
             data.extended = false
             data.shorten = true
+        },
+        open(){
+            this.$refs.drawer.open()
         }
     }
 }
@@ -155,7 +157,6 @@ header{
         font-size: 24px;
         color: #2468F2;
         cursor: pointer;
-        z-index: 999;
         transition: color .25s;
         display: none;
     }
