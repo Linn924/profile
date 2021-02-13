@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <Top :isHeader="isHeader" :move="move"></Top>
+    <Top 
+      :isHeader="isHeader" 
+      :move="move">
+    </Top>
     <About></About>
     <Work></Work>
     <Footer></Footer>
