@@ -5,13 +5,14 @@
 html,
 body,
 #app{
-    min-width: 375px;
+    min-width: 370px;
     background: url('../image/home.jpg') no-repeat center center;
     background-attachment: fixed;
 }
 
 a{text-decoration: none;}
 
+html{overflow-x: hidden;}
 html::-webkit-scrollbar {width: 5px}
 html::-webkit-scrollbar-thumb {background-color: #C1C1C1;border-radius: 2px;}
 html::-webkit-scrollbar-track{background-color: #FFF;}

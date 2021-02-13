@@ -1,8 +1,7 @@
 <template>
-    <div id="drawer" :class="{opened:isOpened,folded:isFolded}">
-        <div class="icon">
-            <i class="fa fa-bars" @click="close"></i>
-        </div>
+    <div 
+        id="drawer" 
+        :class="{opened:isOpened,folded:isFolded}">
         <nav>
             <span 
                 v-for="(item,index) in navList" 
@@ -48,6 +47,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@time:.3s;
 #drawer{
     position: fixed;
     top: 0;
@@ -57,21 +57,8 @@ export default {
     box-sizing: border-box;
     background-color: #fff;
     z-index: 999;
-    .icon{
-        width: inherit;
-        box-sizing: border-box;
-        padding-right: 20px;
-        height: 80px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        i{
-            font-size: 24px;
-            color: #2468F2;
-            cursor: pointer;
-        }
-    }
     nav{
+        margin-top: 80px;
         display: flex;
         flex-direction: column;
         span{
@@ -81,7 +68,7 @@ export default {
             font-size: small;
             padding: 15px 15px;
             cursor: pointer;
-            transition: all .15s;
+            transition: all @time;
             &:hover{
                 color: #666;
                 background-color: #ddd;
@@ -90,10 +77,10 @@ export default {
     }
 }
 .opened{
-    animation: opened .25s ease forwards;
+    animation: opened @time ease forwards;
 }
 .folded{
-    animation: folded .25s ease forwards;
+    animation: folded @time ease forwards;
 }
 @keyframes opened {
     from{right: -200px;}

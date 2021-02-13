@@ -31,6 +31,9 @@
             <div class="triangle" @click="move('about')"></div>
         </footer>
         <Drawer ref="drawer" :move="move"></Drawer>
+        <transition name="mask">
+            <div class="mask" v-show="drawer" @click="close"></div>
+        </transition>
     </div>
 </template>
 <script>
@@ -56,7 +59,8 @@ export default {
                 {href:'top',title:'首页',extended:false,shorten:false},
                 {href:'about',title:'关于',extended:false,shorten:false},
                 {href:'work',title:'作品',extended:false,shorten:false}
-            ]
+            ],
+            drawer:false
         }
     },
     methods:{
@@ -67,14 +71,21 @@ export default {
         leave(data){
             data.extended = false
             data.shorten = true
+            setTimeout(() => {data.shorten = false},350)
         },
         open(){
             this.$refs.drawer.open()
+            this.drawer = true
+        },
+        close(){
+            this.$refs.drawer.close()
+            this.drawer = false
         }
     }
 }
 </script>
 <style lang="less" scoped>
+@time:.3s;
 #top{
     height: 100vh;
     display: flex;
@@ -122,9 +133,16 @@ export default {
             border: 3px solid #ccc;
             clip: rect(0,25px,25px,0);
             cursor: pointer;
-            transition: color .25s;
+            transition: color @time;
             &:hover{border: 3px solid #fff;}
         }
+    }
+    .mask{
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        background-color: rgba(0,0,0, .5);
+        z-index: 998;
     }
 }
 
@@ -155,9 +173,10 @@ header{
     }
     i{
         font-size: 24px;
-        color: #2468F2;
+        color: #FFF;
         cursor: pointer;
-        transition: color .25s;
+        transition: color @time;
+        &:hover{color: #2468F2;}
         display: none;
     }
 }
@@ -182,10 +201,10 @@ header{
 }
 
 a.extended::after{
-    animation: extended .25s ease forwards;
+    animation: extended @time ease forwards;
 }
 a.shorten::after{
-    animation: shorten .25s ease forwards;
+    animation: shorten @time ease forwards;
 }
 @keyframes extended {
     from{width: 0;}
@@ -212,6 +231,12 @@ a.shorten::after{
         z-index: -1;
     }
 }
+
+.mask-enter,
+.mask-leave-to{opacity: 0;}
+.mask-enter-active
+.mask-leave-active{transition: all @time;} 
+
 @media screen and (max-width:760px){
     header i{
         display: block;

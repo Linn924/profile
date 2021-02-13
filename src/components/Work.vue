@@ -4,28 +4,28 @@
         <div class="line"></div>
         <nav>
             <a href="http://home.linncode.cn" target="_blank">
-                <img src="../assets/image/home.jpg" alt="">
+                <img src="../assets/image/home.jpg">
                 <div class="introduce">
                     <p>简约首页</p>
                     <p>简单美观的浏览器起始页，搭配简约导航，使用起来效果更佳哦！</p>
                 </div>
             </a>
             <a href="http://nav.linncode.cn" target="_blank">
-                <img src="../assets/image/nav.jpg" alt="">
+                <img src="../assets/image/nav.jpg">
                 <div class="introduce">
                     <p>简约导航</p>
                     <p>方便实用的导航站点，搭配简约首页，使用起来效果更佳哦！</p>
                 </div>
             </a>
             <a href="http://blog.linncode.cn" target="_blank">
-                <img src="../assets/image/blog.jpg" alt="">
+                <img src="../assets/image/blog.jpg">
                 <div class="introduce">
                     <p>简约博客</p>
                     <p>输出博客文章的站点。例如：搜索框毛玻璃效果等。</p>
                 </div>
             </a>
             <a href="http://blogManage.linncode.cn" target="_blank">
-                <img src="../assets/image/manage.jpg" alt="">
+                <img src="../assets/image/manage.jpg">
                 <div class="introduce">
                     <p>简约博客后台管理</p>
                     <p>对简约博客文章、分类、标签、评论等功能的管理。</p>
